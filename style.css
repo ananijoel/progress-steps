@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*
+    background: #f6f7fb;
+    background-color: #FFF7F8; */
+    background-color: #feeaed;
+    background-image: url("data:image/svg+xml,%3Csvg width='42' height='44' viewBox='0 0 42 44' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='Page-1' fill='none' fill-rule='evenodd'%3E%3Cg id='brick-wall' fill='%23e592a3' fill-opacity='0.1'%3E%3Cpath d='M0 0h42v44H0V0zm1 1h40v20H1V1zM0 23h20v20H0V23zm22 0h20v20H22V23z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");}
+.container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.display{
+    color: #64172B;
+    height: 50vh;
+    width: 50vw;
+    margin: 50px;
+    border: 1px solid #E592A3;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #feeaed;
+}
+.display p {
+    margin: 10px 0;
+}
+.MultiStepProgressBar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    max-width: 500px;
+    width: 100%;
+}
+.MultiStepProgressBar .steps{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+.steps .circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    color: #999;
+    font-size: 9px;
+    font-weight: 500;
+    border-radius: 50%;
+    border: 4px solid #FEEAED;
+    background: #fff;
+    transition: all 200ms ease;
+    transition-delay: 0s ;
+}
+.steps .circle.active{
+    transition-delay: 100ms ;
+    border-color: #CA244D;
+    color: #CA244D;
+}
+.steps .progress{
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background: #FEEAED;
+    z-index: -1;
+}
+.progress .indicator{
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    background: #CA244D;
+    transition: all 300ms ease;
+}
+.MultiStepProgressBar .buttons{
+    display: flex;
+    gap: 20px;
+}
+.buttons button{
+    padding: 8px 25px;
+    background: #CA244D;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+    transition: all 200ms linear;
+}
+.buttons button:active{
+    transform: scale(0.97);
+}
+.buttons button:disabled{
+    background: #E592A3;
+    cursor: not-allowed;
+}
